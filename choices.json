@@ -1,0 +1,28 @@
+{
+    "choices":[
+        {
+            "id":"1",
+            "name":"rock",
+            "strength": "scissors",
+            "weakness":"paper"
+        
+        },
+
+        {
+            "id":"2",
+            "name":"paper",
+            "strength": "rock",
+            "weakness":"scissors"
+        
+        },
+        {
+            "id":"3",
+            "name":"scissors",
+            "strength": "paper",
+            "weakness":"rock"
+        
+        }
+
+    ]
+
+}
