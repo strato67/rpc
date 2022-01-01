@@ -3,13 +3,18 @@
 
 function playRound(playerSelection, computerSelection) {
 
+    let result;
     if(playerSelection==computerSelection.weakness){
-        return "Player won";
+        result = "Player won";
     }else if(playerSelection==computerSelection.strength){
-        return "Computer won";
+        result = "Computer won";
     }else{
-        return "Tie";
+        result = "Tie";
     }
+
+    return `Player selects ${playerSelection},
+    Computer selects ${computerSelection.name},
+    Result: ${result}`;
 
 }
 
