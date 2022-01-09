@@ -1,7 +1,19 @@
 var playerScore = 0;
 var computerScore = 0;
 
-function playRound(playerSelection, computerSelection) {
+const buttons = document.querySelectorAll('.selections');
+
+buttons.forEach(button =>{
+    button.addEventListener('click', e=>{
+        console.log(playRound(e.target.id));
+    })
+
+
+});
+
+
+
+function playRound(playerSelection, computerSelection=computerPlay()) {
 
     let result;
     if(playerSelection==computerSelection.weakness){
@@ -29,20 +41,21 @@ function computerPlay(){
 
 
 
+
+
+
+
+/*
+
+
 while(playerScore<5 && computerScore<5) {
     
-    const computerSelection = computerPlay();
-    const playerSelection = prompt("Enter rock, paper or scissors").toLowerCase();
-
-    if(playerSelection){
-
-    }
-
+   
 
     console.log(playRound(playerSelection, computerSelection));
     console.log(`Player Score:${playerScore}\nComputer Score:${computerScore}`);
 }
-  
+*/
 
 
 
