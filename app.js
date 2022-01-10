@@ -5,7 +5,8 @@ const buttons = document.querySelectorAll('.selections');
 
 buttons.forEach(button =>{
     button.addEventListener('click', e=>{
-        console.log(playRound(e.target.id));
+        const statusBar = document.querySelector('#gamestatus');
+        statusBar.innerText = playRound(e.target.id);
     })
 
 
@@ -16,12 +17,15 @@ buttons.forEach(button =>{
 function playRound(playerSelection, computerSelection=computerPlay()) {
 
     let result;
+    
     if(playerSelection==computerSelection.weakness){
         result = "Player won";
         playerScore++;
+        setPlayerScore();
     }else if(playerSelection==computerSelection.strength){
         result = "Computer won";
         computerScore++;
+        setComputerScore();
     }else{
         result = "Tie";
     }
@@ -37,10 +41,15 @@ function computerPlay(){
     return selections[randNum];
 }
 
+function setPlayerScore(){
+    const scoreboard = document.querySelector('#playerscore');
+    scoreboard.innerText = playerScore;
+}
 
-
-
-
+function setComputerScore(){
+    const scoreboard = document.querySelector('#computerscore');
+    scoreboard.innerText = computerScore;
+}
 
 
 
