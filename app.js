@@ -4,27 +4,34 @@ var computerScore = 0;
 const buttons = document.querySelectorAll('.selections');
 
 buttons.forEach(button =>{
+    
     button.addEventListener('click', e=>{
         const statusBar = document.querySelector('#gamestatus');
-        statusBar.innerText = playRound(e.target.id);
+        if(playerScore<5 && computerScore<5){
+            setPlayerImg(e.target.id);
+            statusBar.innerText = playRound(e.target.id);
+        }else{
+            statusBar.innerText = 'Game over';
+        }
+            
+        
     })
 
 
 });
 
 
-
 function playRound(playerSelection, computerSelection=computerPlay()) {
 
     let result;
-    
+    setCompImg(computerSelection.name);
     if(playerSelection==computerSelection.weakness){
         result = "Player won";
-        playerScore++;
+        ++playerScore;
         setPlayerScore();
     }else if(playerSelection==computerSelection.strength){
         result = "Computer won";
-        computerScore++;
+        ++computerScore;
         setComputerScore();
     }else{
         result = "Tie";
@@ -38,6 +45,7 @@ function playRound(playerSelection, computerSelection=computerPlay()) {
 
 function computerPlay(){
     let randNum = Math.floor(Math.random()*3);
+    
     return selections[randNum];
 }
 
@@ -51,20 +59,49 @@ function setComputerScore(){
     scoreboard.innerText = computerScore;
 }
 
-
-
-
-/*
-
-
-while(playerScore<5 && computerScore<5) {
+function setPlayerImg(choice){
+    const playImg = document.querySelector('#playerIMG');
     
-   
+    let imgpath;
 
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(`Player Score:${playerScore}\nComputer Score:${computerScore}`);
+    for(let i = 0; i<selections.length; i++){
+        if(selections[i].name==choice){
+            imgpath = selections[i].image;
+        }
+
+    }
+
+    const imageSelection = document.createElement('img');
+    imageSelection.setAttribute('src',`${imgpath}`);
+    imageSelection.setAttribute('width','128px;');
+    imageSelection.setAttribute('height','128px;');
+
+    playImg.innerHTML='';
+    playImg.appendChild(imageSelection);
+    
+
 }
-*/
+function setCompImg(choice){
+    const compImg = document.querySelector('#compIMG');
+    
+    let imgpath;
+
+    for(let i = 0; i<selections.length; i++){
+        if(selections[i].name==choice){
+            imgpath = selections[i].image;
+        }
+
+    }
+
+    const imageSelection = document.createElement('img');
+    imageSelection.setAttribute('src',`${imgpath}`);
+    imageSelection.setAttribute('width','128px;');
+    imageSelection.setAttribute('height','128px;');
+
+
+    compImg.innerHTML='';
+    compImg.appendChild(imageSelection);
+}
 
 
 

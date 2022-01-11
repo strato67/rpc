@@ -3,19 +3,20 @@ var selections = [
     {
         "name":"rock",
         "strength":"scissors",
-        "weakness":"paper"
-
+        "weakness":"paper",
+        "image":"images/rock.png"
     },
     {
         "name":"paper",
         "strength":"rock",
-        "weakness":"scissors"
+        "weakness":"scissors",
+        "image":"images/paper.png"
     },
     {
         "name":"scissors",
         "strength":"paper",
-        "weakness":"rock"
-
+        "weakness":"rock",
+        "image":"images/scissors.png"
 
     }
 
