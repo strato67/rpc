@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='options.js' defer></script>
     <script src='app.js' defer></script>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
 </head>
 <body>
@@ -16,16 +16,18 @@
     <div>
         
         
-        <div>
+        <div class="card" style="width: 18rem; height: 18rem;">
+            <h3>Player</h3>
             <h2 id="playerscore">0</h2>
             <div id="playerIMG"></div>
-            <h3>Player</h3>
+            
 
         </div>
-        <div>
+        <div class="card" style="width: 18rem; height: 18rem;" >
+            <h3>Computer</h3>
             <h2 id="computerscore">0</h2>
             <div id="compIMG"></div>
-            <h3>Computer</h3>
+            
 
         </div>
 
@@ -40,18 +42,18 @@
 
     </div>
     
-    <div class="selections">
+    <div class="selections d-grid gap-2 col-4 mx-auto">
 
-        <div class="selection" id="rock">Rock</div>
-        <div class="selection" id="paper">Paper</div>
-        <div class="selection" id="scissors">Scissors</div>
+        <div class="selection btn btn-outline-primary" id="rock">Rock</div>
+        <div class="selection btn btn-outline-primary" id="paper">Paper</div>
+        <div class="selection btn btn-outline-primary" id="scissors">Scissors</div>
 
 
 
     </div>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
 </body>
