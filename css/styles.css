@@ -1,6 +1,10 @@
 body{
     background-color: aliceblue;
 }
-h3{
+h3,#playerscore,#computerscore{
     text-align: center;
+}
+
+.selections{
+    
 }
