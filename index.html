@@ -12,53 +12,34 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-        
-        
-            <div class="col-sm">
-                
-                <div class="card">
-                    <h3>Player</h3>
-                    <h2 id="playerscore">0</h2>
-                    <div id="playerIMG"></div>
-
-                </div>
-                
-                
-                
-    
-            </div>
-            <div class="col-sm">
-                <div class="card" >
-                    <h3>Computer</h3>
-                    <h2 id="computerscore">0</h2>
-                    <div id="compIMG"></div>
-                
-                </div>
-                
-                
-    
-            </div>
-    
-    
+    <div class="scoreContainer">
+        <div class="playerScoreCard">
+            <h3>Player</h3>
+            <h1 id="playerscore">0</h1>
+            <div id="playerIMG"></div>
         </div>
-
-
-    </div>
-
-
+        <div class="computerScoreCard">
+            <h3>Computer</h3>
+            <h1 id="computerscore">0</h1>
+            <div id="compIMG"></div>
+        </div>
+      </div>
+   
     <div class="container">
 
-            <div id="gamestatus"></div>
+            <div id="gamestatusBox">
+                <p id="gamestatus"></p>
+
+            </div>
 
     </div>
     
     <div class="selections d-grid gap-2 col-4 mx-auto">
 
-        <div class="selection btn btn-outline-primary" id="rock">Rock</div>
-        <div class="selection btn btn-outline-primary" id="paper">Paper</div>
-        <div class="selection btn btn-outline-primary" id="scissors">Scissors</div>
+        <h1>Rock Paper Scissors</h1>
+        <button class="selection btn btn-primary" id="rock">Rock</button>
+        <button class="selection btn btn-primary" id="paper">Paper</button>
+        <button class="selection btn btn-primary" id="scissors">Scissors</button>
 
     </div>
 

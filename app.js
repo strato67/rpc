@@ -1,7 +1,7 @@
 var playerScore = 0;
 var computerScore = 0;
 
-const buttons = document.querySelectorAll('.selections');
+const buttons = document.querySelectorAll('.selection');
 
 buttons.forEach(button =>{
     
@@ -73,7 +73,8 @@ function setPlayerImg(choice){
 
     const imageSelection = document.createElement('img');
     imageSelection.setAttribute('src',`${imgpath}`);
-    imageSelection.setAttribute('class','card-img-top');
+    imageSelection.setAttribute('width','256px');
+    imageSelection.setAttribute('height','256px');
 
     playImg.innerHTML='';
     playImg.appendChild(imageSelection);
@@ -94,7 +95,8 @@ function setCompImg(choice){
 
     const imageSelection = document.createElement('img');
     imageSelection.setAttribute('src',`${imgpath}`);
-    imageSelection.setAttribute('class','card-img-top');
+    imageSelection.setAttribute('width','256px');
+    imageSelection.setAttribute('height','256px');
 
 
     compImg.innerHTML='';

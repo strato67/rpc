@@ -1,10 +1,43 @@
 body{
-    background-color: aliceblue;
+    background-color: #3C3C3C;
+    color: white;
 }
 h3,#playerscore,#computerscore{
     text-align: center;
 }
 
+.scoreContainer{  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "playerScoreCard computerScoreCard";
+    height: 50%;
+    margin-bottom: 2em;
+    
+}
+  
+.playerScoreCard{
+    grid-area: playerScoreCard; 
+    padding-bottom: 5em;
+    padding-top: 2em;
+    background-color: #087E8B;
+}
+  
+.computerScoreCard{
+    grid-area: computerScoreCard;
+    background-color: #FF5A5F;
+    padding-top: 2em;
+    padding-bottom: 5em;
+}
+
+#playerIMG,#compIMG{
+    height: 256px;
+    
+    text-align: center;
+}
 .selections{
     
+    padding: 2rem;
 }
