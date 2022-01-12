@@ -73,8 +73,7 @@ function setPlayerImg(choice){
 
     const imageSelection = document.createElement('img');
     imageSelection.setAttribute('src',`${imgpath}`);
-    imageSelection.setAttribute('width','128px;');
-    imageSelection.setAttribute('height','128px;');
+    imageSelection.setAttribute('class','card-img-top');
 
     playImg.innerHTML='';
     playImg.appendChild(imageSelection);
@@ -95,8 +94,7 @@ function setCompImg(choice){
 
     const imageSelection = document.createElement('img');
     imageSelection.setAttribute('src',`${imgpath}`);
-    imageSelection.setAttribute('width','128px;');
-    imageSelection.setAttribute('height','128px;');
+    imageSelection.setAttribute('class','card-img-top');
 
 
     compImg.innerHTML='';
