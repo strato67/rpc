@@ -8,10 +8,16 @@ buttons.forEach(button =>{
     button.addEventListener('click', e=>{
         const statusBar = document.querySelector('#gamestatus');
         if(playerScore<5 && computerScore<5){
-            setPlayerImg(e.target.id);
+            setImg('player',e.target.id);
             statusBar.innerText = playRound(e.target.id);
         }else{
-            statusBar.innerText = 'Game over';
+            let winner = gameEnd();
+            
+            if(confirm(`${winner}. Play again?`)){
+                location.reload();
+            }else{
+                statusBar.innerText = winner;
+            }
         }
                 
     })
@@ -21,7 +27,7 @@ buttons.forEach(button =>{
 function playRound(playerSelection, computerSelection=computerPlay()) {
 
     let result;
-    setCompImg(computerSelection.name);
+    setImg('comp',computerSelection.name);
     if(playerSelection==computerSelection.weakness){
         ++playerScore;
         setPlayerScore();
@@ -40,6 +46,18 @@ function playRound(playerSelection, computerSelection=computerPlay()) {
 
 }
 
+function gameEnd(){
+
+    let winner;
+    if(playerScore>computerScore){
+        winner = 'You';
+    }else{
+        winner = 'Computer';
+    }
+    return `${winner} won the game`;
+
+}
+
 function computerPlay(){
     let randNum = Math.floor(Math.random()*3);
     return selections[randNum];
@@ -55,9 +73,15 @@ function setComputerScore(){
     scoreboard.innerText = computerScore;
 }
 
-function setPlayerImg(choice){
-    const playImg = document.querySelector('#playerIMG');
-    
+function setImg(user,choice){
+
+    let playImg;
+    if(user==='player'){
+        playImg = document.querySelector('#playerIMG');
+    }else if(user==='comp'){
+        playImg = document.querySelector('#compIMG');
+    }
+      
     let imgpath;
 
     for(let i = 0; i<selections.length; i++){
@@ -75,30 +99,4 @@ function setPlayerImg(choice){
     playImg.innerHTML='';
     playImg.appendChild(imageSelection);
     
-
 }
-function setCompImg(choice){
-    const compImg = document.querySelector('#compIMG');
-    
-    let imgpath;
-
-    for(let i = 0; i<selections.length; i++){
-        if(selections[i].name==choice){
-            imgpath = selections[i].image;
-        }
-
-    }
-
-    const imageSelection = document.createElement('img');
-    imageSelection.setAttribute('src',`${imgpath}`);
-    imageSelection.setAttribute('width','256px');
-    imageSelection.setAttribute('height','256px');
-
-    compImg.innerHTML='';
-    compImg.appendChild(imageSelection);
-}
-
-
-
-
-
