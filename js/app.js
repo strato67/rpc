@@ -13,39 +13,35 @@ buttons.forEach(button =>{
         }else{
             statusBar.innerText = 'Game over';
         }
-            
-        
+                
     })
 
-
 });
-
 
 function playRound(playerSelection, computerSelection=computerPlay()) {
 
     let result;
     setCompImg(computerSelection.name);
     if(playerSelection==computerSelection.weakness){
-        result = "Player won";
         ++playerScore;
         setPlayerScore();
+        result = "Player wins this round";
+        
     }else if(playerSelection==computerSelection.strength){
-        result = "Computer won";
         ++computerScore;
         setComputerScore();
+        result = "Computer wins this round";
+        
     }else{
         result = "Tie";
     }
 
-    return `Player selects ${playerSelection},
-    Computer selects ${computerSelection.name},
-    Result: ${result} this round`;
+    return result;
 
 }
 
 function computerPlay(){
     let randNum = Math.floor(Math.random()*3);
-    
     return selections[randNum];
 }
 
@@ -97,7 +93,6 @@ function setCompImg(choice){
     imageSelection.setAttribute('src',`${imgpath}`);
     imageSelection.setAttribute('width','256px');
     imageSelection.setAttribute('height','256px');
-
 
     compImg.innerHTML='';
     compImg.appendChild(imageSelection);

@@ -41,3 +41,7 @@ h3,#playerscore,#computerscore{
     
     padding: 2rem;
 }
+.gamestatusBox{
+    height: 5em;
+    text-align: center;
+}
