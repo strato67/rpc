@@ -27,7 +27,7 @@ buttons.forEach(button =>{
 function playRound(playerSelection, computerSelection) {
 
     let result;
-    setImg('comp',computerSelection.name);
+    
     if(playerSelection==computerSelection.weakness){
         ++playerScore;
         setPlayerScore();
@@ -60,7 +60,9 @@ function gameEnd(){
 
 function computerPlay(){
     let randNum = Math.floor(Math.random()*3);
-    return selections[randNum];
+    let compSelection = selections[randNum];
+    setImg('comp',compSelection.name);
+    return compSelection;
 }
 
 function setPlayerScore(){
