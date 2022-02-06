@@ -30,12 +30,12 @@ function playRound(playerSelection, computerSelection) {
     
     if(playerSelection==computerSelection.weakness){
         ++playerScore;
-        setPlayerScore();
+        //setPlayerScore();
         result = "Player wins this round";
         
     }else if(playerSelection==computerSelection.strength){
         ++computerScore;
-        setComputerScore();
+        //setComputerScore();
         result = "Computer wins this round";
         
     }else{
@@ -67,12 +67,12 @@ function computerPlay(){
 
 function setPlayerScore(){
     const scoreboard = document.querySelector('#playerscore');
-    scoreboard.innerText = playerScore;
+    scoreboard.textContent = playerScore;
 }
 
 function setComputerScore(){
     const scoreboard = document.querySelector('#computerscore');
-    scoreboard.innerText = computerScore;
+    scoreboard.textContent = computerScore;
 }
 
 function setImg(user,choice){
@@ -102,3 +102,4 @@ function setImg(user,choice){
     playImg.appendChild(imageSelection);
     
 }
+module.exports = playRound;

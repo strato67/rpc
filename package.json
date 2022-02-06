@@ -1,0 +1,25 @@
+{
+  "name": "rpc",
+  "version": "1.0.0",
+  "description": "Simple game of rock paper scissors against computer, best of five",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strato67/rps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strato67/rps/issues"
+  },
+  "homepage": "https://github.com/strato67/rps#readme",
+  "devDependencies": {
+    "jest": "^27.5.0"
+  },"jest":{
+    "testEnvironment": "jsdom"
+}
+}
