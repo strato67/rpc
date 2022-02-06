@@ -9,7 +9,7 @@ buttons.forEach(button =>{
         const statusBar = document.querySelector('#gamestatus');
         if(playerScore<5 && computerScore<5){
             setImg('player',e.target.id);
-            statusBar.innerText = playRound(e.target.id);
+            statusBar.innerText = playRound(e.target.id,computerPlay());
         }else{
             let winner = gameEnd();
             
@@ -24,7 +24,7 @@ buttons.forEach(button =>{
 
 });
 
-function playRound(playerSelection, computerSelection=computerPlay()) {
+function playRound(playerSelection, computerSelection) {
 
     let result;
     setImg('comp',computerSelection.name);
