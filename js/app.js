@@ -30,13 +30,11 @@ function playRound(playerSelection, computerSelection) {
     
     if(playerSelection==computerSelection.weakness){
         ++playerScore;
-        //Comment out line below for test cases
         setPlayerScore();
         result = "Player wins this round";
         
     }else if(playerSelection==computerSelection.strength){
         ++computerScore;
-        //Comment out line below for test cases
         setComputerScore();
         result = "Computer wins this round";
         

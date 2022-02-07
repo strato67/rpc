@@ -1,8 +1,16 @@
 const playRound = require('./app')
 const selections = require('./options')
+const fs = require('fs');
+const path = require('path');
+const html = fs.readFileSync(path.resolve(__dirname, '../index.html'), 'utf8');
+
+jest
+    .dontMock('fs');
 
 describe('Testing file locations of selection images', () => {
-
+  beforeEach(() => {
+    document.documentElement.innerHTML = html.toString();
+});
     test('Rock Image', () => {
         expect(selections[0].image).toBe("images/rock.png");
       });  
@@ -16,6 +24,9 @@ describe('Testing file locations of selection images', () => {
 });
 
 describe('Testing options where player chooses rock', () => {
+  beforeEach(() => {
+    document.documentElement.innerHTML = html.toString();
+});
     test('Player: rock, Computer: paper', () => {
         expect(playRound('rock',selections[1])).toBe("Computer wins this round");
       });
@@ -30,6 +41,9 @@ describe('Testing options where player chooses rock', () => {
 });
 
 describe('Testing options where player chooses paper', () => {
+  beforeEach(() => {
+    document.documentElement.innerHTML = html.toString();
+});
     test('Player: paper, Computer: paper', () => {
         expect(playRound('paper',selections[1])).toBe("Tie");
       });
@@ -44,6 +58,9 @@ describe('Testing options where player chooses paper', () => {
 });
 
 describe('Testing options where player chooses scissors', () => {
+  beforeEach(() => {
+    document.documentElement.innerHTML = html.toString();
+});
     test('Player: scissors, Computer: paper', () => {
         expect(playRound('scissors',selections[1])).toBe("Player wins this round");
       });
